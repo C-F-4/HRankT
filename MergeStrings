@@ -1,0 +1,276 @@
+/*
+Complete the mergeStrings function in your editor. It has 2 parameters:
+A string, a.
+A string, b.
+ 
+Your function must merge strings a and b, and then return a single merged string. A merge operation on two strings is described as follows:
+Append alternating characters from a and b, respectively, to some new string, mergedString.
+Once all of the characters in one of the strings have been merged, append the remaining characters in the other string to mergedString.
+ 
+Input Format
+The locked stub code in your editor reads two strings, a and b, from stdin and passes them to your function.
+ 
+Constraints
+1 ≤ |a|, |b| ≤ 25000
+ 
+Output Format
+Your function must return the merged string. This will be printed to stdout by the locked stub code in your editor.
+ 
+Sample Input 1
+abc
+def
+ 
+Sample Output 1
+adbecf
+ 
+Sample Input 2
+ab
+zsd
+ 
+Sample Output 2
+azbsd
+ 
+Explanation
+Sample Case 1
+a = abc
+b = def
+Taking alternate characters from both the strings , we get adbecf
+Sample Case 2
+a = ab
+b = zsd
+Taking alternate characters from both the strings , we get azbsd
+ 
+||
+File  Options  Help
+Run  ▾   
+
+solution.cpp
+1
+#include <map>
+2
+#include <set>
+3
+#include <list>
+4
+#include <cmath>
+5
+#include <ctime>
+6
+#include <deque>
+7
+#include <queue>
+8
+#include <stack>
+9
+#include <string>
+10
+#include <bitset>
+11
+#include <cstdio>
+12
+#include <limits>
+13
+#include <vector>
+14
+#include <climits>
+15
+#include <cstring>
+16
+#include <cstdlib>
+17
+#include <fstream>
+18
+#include <numeric>
+19
+#include <sstream>
+20
+#include <iostream>
+21
+#include <algorithm>
+22
+#include <unordered_map>
+23
+​
+24
+using namespace std;
+25
+​
+26
+/*
+27
+ * Complete the function below.
+28
+ */
+29
+string mergeStrings(string a, string b) {
+30
+    string s(a.size() + b.size(), ' ');
+31
+    int a_ct = 0, b_ct = 0;
+32
+    int i = 0;
+33
+    for(i = 0; a_ct < a.size() && b_ct < b.size(); i++) {
+34
+        s[i] = a[a_ct++];
+35
+        s[++i] = b[b_ct++];
+36
+    }
+37
+    for(; a_ct < a.size(); a_ct++) {
+38
+        s[i++] = a[a_ct];
+39
+    }
+40
+    for(; b_ct < b.size(); b_ct++) {
+41
+        s[i++] = b[b_ct];
+42
+    }
+43
+    return s;
+44
+}
+45
+​
+46
+​
+47
+int main() {
+48
+    ofstream fout(getenv("OUTPUT_PATH"));
+49
+    string res;
+50
+    string _a;
+51
+    getline(cin, _a);
+52
+    
+53
+    string _b;
+54
+    getline(cin, _b);
+55
+    
+56
+    res = mergeStrings(_a, _b);
+57
+    fout << res << endl;
+58
+    
+59
+    fout.close();
+60
+    return 0;
+61
+}
+62
+​
+Line: 31  Col: 28
+Test against custom input
+
+Submit and Continue
+You can change your submission later.
+Compiled successfully. All available test cases passed!
+Test Case #1:  Test Case #2:  Test Case #3:  Test Case #4:  Test Case #5:  Test Case #6:  Test Case #7:  Test Case #8:  
+Testcase 1: Success
+Input [Download]
+abc
+def
+Your Output
+adbecf
+Expected Output [Download]
+adbecf
+Testcase 2: Success
+Input [Download]
+ab
+zsd
+Your Output
+azbsd
+Expected Output [Download]
+azbsd
+Testcase 3: Success
+Your Output
+Output hidden
+Testcase 4: Success
+Your Output
+Output hidden
+Testcase 5: Success
+Your Output
+Output hidden
+Testcase 6: Success
+Your Output
+Output hidden
+Testcase 7: Success
+Your Output
+Output hidden
+Testcase 8: Success
+Your Output
+Output hidden
+*/
+
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+
+/*
+ * Complete the function below.
+ */
+string mergeStrings(string a, string b)
+{
+    string s(a.size() + b.size(), ' ');
+    int a_ct = 0, b_ct = 0;
+    int i = 0;
+    for (i = 0; a_ct < a.size() && b_ct < b.size(); i++) {
+        s[i] = a[a_ct++];
+        s[++i] = b[b_ct++];
+    }
+    for (; a_ct < a.size(); a_ct++) {
+        s[i++] = a[a_ct];
+    }
+    for (; b_ct < b.size(); b_ct++) {
+        s[i++] = b[b_ct];
+    }
+    return s;
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+    string res;
+    string _a;
+    getline(cin, _a);
+
+    string _b;
+    getline(cin, _b);
+
+    res = mergeStrings(_a, _b);
+    fout << res << endl;
+
+    fout.close();
+    return 0;
+}
