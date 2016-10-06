@@ -1,0 +1,20 @@
+/*
+Suppose we are sorting an array of integers using a Quick Sort algorithm. The Quick sort uses divide and conquer to gain the same advantages as the merge sort, while not using additional storage. A quick sort first selects a value, which is called the pivot value. The role of the pivot value is to assist with splitting the list. The actual position where the pivot value belongs in the final sorted list, commonly called the split point, will be used to divide the list for subsequent calls to the quick sort. You have to implement Quick Sort and also print the value of pivot value.
+ 
+SAMPLE INPUT
+8                                       // Number of integer
+27 10 36 18 25 45 11 8  // Array of integer
+ 
+SAMPLE OUTPUT
+27 10 36 18 25 45 11 8 
+Pivot Element : 27      // first pivot element
+11 10 8 18 25 27 45 36  // pivot element at its final position
+Pivot Element : 11      
+8 10 11 18 25 27 45 36 
+Pivot Element : 8       // Third pivot element
+8 10 11 18 25 27 45 36 
+Pivot Element : 18
+8 10 11 18 25 27 45 36 
+Pivot Element : 45
+8 10 11 18 25 27 36 45   // Sorted List
+*/
