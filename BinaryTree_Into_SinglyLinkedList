@@ -1,0 +1,31 @@
+/*
+Convert the BST into Singly Linked List ?
+ 
+
+ 
+Sample Input Test Case 1:
+10
+20
+30
+5
+7
+4
+-1
+ 
+Sample Output Test Case 2:
+30
+20
+10
+7
+5
+4
+ 
+Explanation:
+Input:
+The random elements are entered to create a BST, until -1 is pressed.  A BST is a binary tree of nodes ordered in the following way:
+Each node contains data 
+The elements in the left subtree are < (less) than/=(equal to) the parent node.
+The elements in the right subtree > (greater) than the parent node.
+Output:
+Once the tree has been created, inorder of the tree is calculated and thus forming the singly linked list (Following insertion at the beginning fashion) and printing it. In above sample Test case, inorder of the tree is formed as 4 5 7 10 20 30 and linked list formed as 30 20 10 7 5 4. 
+*/
