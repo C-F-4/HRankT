@@ -1,0 +1,30 @@
+/*
+Mirror Image is defined as an image or object which is identical in form to another, but with the structure reversed. Construct the mirror image of the given BST? 
+                           
+                Original BST                                                                                   Mirror Image
+ 
+                                                 
+Sample Test Case 1:
+10
+20
+30
+5
+4
+7
+-1
+ 
+Sample Output Test Case 1:
+10 5 20 4 7 30
+10 20 5 30 7 4 
+ 
+Explanation:
+Input:
+The random elements are entered to create a BST, until -1 is pressed.  A BST is a binary tree of nodes ordered in the following way:
+Each node contains data 
+The elements in the left subtree are < (less) than/=(equal to) the parent node.
+The elements in the right subtree > (greater) than the parent node.
+ 
+Output:
+First line is the Level Order Traversing of Original BST.
+Second line is the Level Order Traversing of Mirror Image of BST.
+*/
