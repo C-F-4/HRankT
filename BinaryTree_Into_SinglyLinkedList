@@ -56,14 +56,15 @@ Once the tree has been created, inorder of the tree is calculated and thus formi
 using namespace std;
 
 class test {
-    struct node // for BST
+
+    struct node //for BST
         {
         int info;
         struct node* left;
         struct node* right;
     };
 
-    struct singly // for singly linked list
+    struct singly //for singly linked list
         {
         int info;
         struct singly* next;
@@ -73,6 +74,7 @@ class test {
     singly* start;
 
 protected:
+
     struct node* createTreeNode(int val)
     {
         struct node* newNode = new struct node;
@@ -81,6 +83,7 @@ protected:
         newNode->right = nullptr;
         return newNode;
     }
+    
     struct singly* createListNode(int val)
     {
         struct singly* newNode = new struct singly;
@@ -103,37 +106,41 @@ protected:
         return cur;
     }
 
-    struct singly* insertListNode(struct singly* cur, int val)
+    struct singly* insertListNode(struct singly* head, int val)
     {
-        if (cur == nullptr) {
-            cur = createListNode(val);
+        if (head == nullptr) {
+            head = createListNode(val);
         }
         else {
+            struct singly* cur = head;
             while (cur->next != nullptr) {
                 cur = cur->next;
             }
             cur->next = createListNode(val);
         }
-        return cur;
+        return head;
     }
-    struct singly* reverseList(struct singly* prev, struct singly* cur,
-        struct singly* nxt)
+
+    struct singly* reverseList(struct singly* prev, struct singly* cur, struct singly* nxt)
     {
+        if (cur == nullptr) {
+            return cur;
+        } // in case of empty list
         cur->next = prev;
         if (nxt == nullptr) {
             return cur;
-        }
+        } // base case
         return reverseList(cur, nxt, nxt->next);
     }
+
     struct singly* inorder_print(struct singly* start, struct node* cur)
     {
         if (cur == nullptr) {
             return start;
         }
-        inorder_print(start, cur->right);
-        // start = insertListNode(start, cur->info);
-        cout << cur->info << endl;
-        inorder_print(start, cur->left);
+        start = inorder_print(start, cur->left);
+        start = insertListNode(start, cur->info);
+        start = inorder_print(start, cur->right);
         return start;
     }
 
@@ -162,27 +169,35 @@ public:
         }
         return;
     }
+    
     void inorder()
     {
+        if (root == nullptr) {
+            return;
+        }
         this->start = inorder_print(this->start, root);
         this->start = reverseList(nullptr, this->start, this->start->next);
         return;
     }
+    
     void display()
     {
+
         pt = start;
         while (pt != NULL) {
+
             cout << pt->info << endl;
             pt = pt->next;
         }
     }
 };
 
+// stub
 int main()
 {
     test ob;
-    ob.create(); // creation of binary search tree
-    ob.inorder(); // find its inorder traversal
-    ob.display(); // display the singly linked list
+    ob.create(); //creation of binary search tree
+    ob.inorder(); //find its inorder traversal
+    ob.display(); //display the singly linked list
     return 0;
 }
