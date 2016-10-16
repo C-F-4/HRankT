@@ -135,6 +135,7 @@ public:
         cout << endl;
         return;
     }
+    
     void Mirror(void)
     {
         if (this->root == nullptr) {
