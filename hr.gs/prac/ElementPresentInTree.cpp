@@ -114,8 +114,9 @@ int isPresent(node* root, int val)
              node * left, *right;
              int val;
       };
-*/
+    */
 }
+
 int main()
 {
     node *_root, *root_curr;
@@ -140,6 +141,5 @@ int main()
         cin >> _x;
         cout << isPresent(_root, _x) << endl;
     }
-
     return 0;
 }
