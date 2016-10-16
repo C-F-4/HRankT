@@ -48,8 +48,9 @@ using namespace std;
 class Queue {
     private:
         long *a,
-            front, rear;
+              front, rear;
         int size, del;
+        
     public:
         Queue() {
             size = MAX_SIZE;
@@ -58,12 +59,14 @@ class Queue {
             rear = -1;
             del = 0;
         }
+        
         ~Queue() {
             delete []a;
             size = 0;
             front = 0;
             rear = -1;
         }
+        
         void enqueue(long x) {
             // Insert in the end(front) of the array
             if(!isFull()) {
@@ -75,6 +78,7 @@ class Queue {
                 a[++rear] = x;
             }
         }
+        
         long *doubleSize(void) {
             int tmp = size;
             size *= 2;
@@ -86,6 +90,7 @@ class Queue {
             delete[] tmpbuf;
             return a;
         }
+        
         void dequeue(void) {
             // Remove from rear of the array
             if(isEmpty()) {
@@ -96,6 +101,7 @@ class Queue {
                 del++;
             }
         }
+        
         void print() {
             if(isEmpty()) {
                 clog << "Empty Queue" << endl;
@@ -104,9 +110,11 @@ class Queue {
                 cout << a[i] << endl;
             }
         }
+        
         bool isEmpty() {
             return (front == -1 && rear == -1);
         }
+        
         bool isFull() {
             return (rear == size - 1);
         }
