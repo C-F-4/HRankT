@@ -25,6 +25,7 @@ Numbers are entered in the list in the decreasing order until -1 is entered. Ass
  Sample Output:
 All numbers in the list are displayed after the insertion of the number to its appropriate position, such that list remains sorted.
 */
+
 #include <map>
 #include <set>
 #include <list>
@@ -49,6 +50,7 @@ All numbers in the list are displayed after the insertion of the number to its a
 #include <unordered_map>
 
 using namespace std;
+
 class linked_list {
     struct node {
         int info;
@@ -61,6 +63,7 @@ public:
     {
         start = NULL;
     }
+    
     void create_ll(void)
     {
         int d;
@@ -71,6 +74,7 @@ public:
         }
         return;
     }
+    
     struct node* createNode(int d)
     {
         struct node* newNode = new struct node;
@@ -78,6 +82,7 @@ public:
         newNode->next = nullptr;
         return newNode;
     }
+    
     void insert_beg(int d)
     {
         struct node* newNode = createNode(d);
@@ -85,6 +90,7 @@ public:
         start = newNode;
         return;
     }
+    
     void insert_sorted(void)
     {
         int d;
@@ -106,6 +112,7 @@ public:
         ptr->next = newNode;
         return;
     }
+    
     void show(void)
     {
         if (start == nullptr) {
