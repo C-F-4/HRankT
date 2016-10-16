@@ -1,2 +1,2 @@
 # HRankT
-Hackerrank Test Solutions
+Hackerrank Test Solutions - (mixed stub code)
