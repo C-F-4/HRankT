@@ -10,18 +10,22 @@ Sample Output
 */
 #include <iostream>
 #include <cstdlib>
+
 using namespace std;
+
 struct node {
     node* left;
     int data;
     node* right;
 };
+
 class bst {
 public:
     node* createnode(int);
     node* insertion(node*, int);
     int LeafCount(struct node* node);
 };
+
 node* bst::insertion(node* root, int item)
 {
     if (root == NULL) {
@@ -36,6 +40,7 @@ node* bst::insertion(node* root, int item)
     }
     return root;
 }
+
 node* bst::createnode(int item)
 {
     node* newnode = new node;
@@ -44,6 +49,7 @@ node* bst::createnode(int item)
     newnode->right = NULL;
     return newnode;
 }
+
 int bst::LeafCount(node* ptr)
 {
     if (ptr == nullptr) {
@@ -56,6 +62,7 @@ int bst::LeafCount(node* ptr)
         return (LeafCount(ptr->left) + LeafCount(ptr->right));
     }
 }
+
 int main()
 {
     bst obj;
