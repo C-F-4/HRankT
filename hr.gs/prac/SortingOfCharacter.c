@@ -28,6 +28,7 @@ void sort(char* p)
     }
     return;
 }
+
 int main()
 {
     char* str = malloc(256);
