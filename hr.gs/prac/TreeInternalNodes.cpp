@@ -16,6 +16,7 @@ Sample Output: internal nodes.
 
 #include<iostream>
 #include<cstdlib>
+
 using namespace std;
 
 struct node
@@ -31,6 +32,7 @@ public:
     node* insertion(node*,int);
     int nodecount(struct node* ptr);
 };
+
 node* bst::createnode(int val) {
     struct node* newNode = new struct node;
     newNode->data = val;
