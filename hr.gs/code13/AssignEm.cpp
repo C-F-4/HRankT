@@ -1,4 +1,4 @@
-
+// 3.jpg + 4.jpg
 #include <cmath>
 #include <ctime>
 #include <deque>
