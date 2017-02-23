@@ -9,8 +9,13 @@ Input format:
 First line consists of a number N which is an Integer, that is the total number of candidates.
 The next N lines contains a list of N strings, where each string denotes the candidate name who gets the vote.
 
+Output format:
+A string which is the candidate that wins the election.
+
 Constraints:
 0 < N <= 10000
+Citizens can only cast to existing candidates.
+Each N line contains a single string without any spaces.
 
 Sample Test Case:
 10
